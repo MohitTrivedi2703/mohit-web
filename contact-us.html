@@ -12,8 +12,23 @@
         jQuery(function ($) {
 
             $('#contact_us_submit').on('click', function () {
-                alert('Form submitted.Thanks!');
-            })
+                if ($('#name').val() == '') {
+                    $('#name-validate').show();
+
+                }
+                if ($('#email').val() == '') {
+                    $('#email-validate').show();
+
+                }
+                if ($('#message').val() == '') {
+                    $('#message-validate').show();
+
+                }
+                if ($('#name').val() != '' && $('#email').val() != '' && $('#message').val() != '') {
+                    alert("Form submitted. Thanks!");
+                    location.reload(true);
+                }
+            });
 
         });
     </script>
